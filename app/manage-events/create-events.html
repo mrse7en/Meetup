@@ -1,0 +1,168 @@
+<header class="white-header" ng-include="template[0].url"></header>
+<div class="container">
+	<ol class="breadcrumb">
+      <li><a href="#home">Home</a></li>
+      <li class="active">{{pageName}}</li>
+    </ol>
+    <div class="row">
+    	<div class="col-md-3 col-xs-12">
+        	<aside class="side-panel collapse" id="sidepanel">
+            	<div class="avatar">
+                <img src="images/default-avatar.png">
+                <p class="welcome">
+                    Welcome, {{username}}
+                </p>
+            </div>
+            <div class="list-group">
+             <a href="#profile" class="list-group-item"><span class="icon icon-person"></span> Your Profile</a>
+              <a href="#create-event" class="list-group-item active"><span class="icon icon-event_available"></span> Create an Event</a>
+              <a href="#manage-events" class="list-group-item"><span class="icon icon-event_note"></span> Manage Events</a>
+               <a href="#contacts" class="list-group-item"><span class="icon icon-perm_contact_calendar"></span> Contacts</a>
+              <a href="#login" class="list-group-item" ng-click="logout()"><span class="icon icon-exit_to_app"></span> Logout</a>
+            </div>
+            </aside>
+		</div>
+        <div class="col-md-6 col-xs-12">
+        	<div class="panel panel-default">
+              <div class="panel-heading prime-title"><span>Create a New Event</span></div>
+              <div class="panel-body">
+                <form role="form" name="eventForm" novalidate ng-submit="submit()">
+                  <div class="form-group">
+                    <label for="ename">Event Name <sup>*</sup></label>
+                    <input type="text" class="form-control" id="ename" placeholder=""  ng-model="eventData.ename" ng-minlength="5" ng-maxlength="50" required name="ename">
+                    <div ng-messages="eventForm.ename.$error" ng-if="interacted(eventForm.ename)" class="error-info">
+                        <p ng-message="minlength">Event name is too short.</p>
+                        <p ng-message="maxlength">Event name is too long.</p>
+                        <p ng-message="required">Event name is required.</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="egloc">Event Venue Geoloaction  <sup>*</sup></label>
+                    <input type="text" class="form-control" id="egloc" required name="egloc" ng-model="eventData.egloc" placeholder="Pick up location from the map" readonly>
+                    <div ng-messages="eventForm.egloc.$error" ng-if="interacted(eventForm.egloc)" class="error-info">
+                        <p ng-message="required">Event Location is required.</p>
+                    </div>
+                    <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+                    <div id="type-selector" class="controls">
+                      <input type="radio" name="type" id="changetype-all" checked="checked">
+                      <label for="changetype-all">All</label>
+                      <input type="radio" name="type" id="changetype-establishment">
+                      <label for="changetype-establishment">Establishments</label>
+                      <input type="radio" name="type" id="changetype-address">
+                      <label for="changetype-address">Addresses</label>
+                      <input type="radio" name="type" id="changetype-geocode">
+                      <label for="changetype-geocode">Geocodes</label>
+                    </div>
+                    
+                    <div id="map"></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="evname">Event Venue Name  <sup>*</sup></label>
+					<input type="text" class="form-control" id="venue" placeholder="" ng-model="eventData.venue" ng-minlength="5" ng-maxlength="50" required name="venue">
+                    <div ng-messages="eventForm.venue.$error" ng-if="interacted(eventForm.venue)" class="error-info">
+                        <p ng-message="minlength">Event name is too short.</p>
+                        <p ng-message="maxlength">Event name is too long.</p>
+                        <p ng-message="required">Event name is required.</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="edate">Event Date &amp; Time  <sup>*</sup></label>
+                    <input type="text" class="form-control date-time-picker" id="edate" placeholder="" ng-model="eventData.edate" ng-minlength="5" ng-maxlength="50" required name="edate">
+                    <div ng-messages="eventForm.edate.$error" ng-if="interacted(eventForm.edate)" class="error-info">
+                        <p ng-message="minlength">Event name is too short.</p>
+                        <p ng-message="maxlength">Event name is too long.</p>
+                        <p ng-message="required">Event name is required.</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inattd">Invite Attendees  <sup>*</sup></label>
+                      <div class="row">
+                        <div class="panel-group col-xs-12 col-md-8">
+                            <div class="panel panel-primary contact-panel">
+                                <div class="panel-body">
+                                    <div class="contact-pics">
+                                        <img src="images/contact-default-avatar.png" alt="contact name">
+                                    </div>
+                                    <div class="contact-info">
+                                        <p>Sathesh Kumar</p>
+                                        <p>sathesh.designer@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary contact-panel">
+                                <div class="panel-body">
+                                    <div class="contact-pics">
+                                        <img src="images/contact-default-avatar.png" alt="contact name">
+                                    </div>
+                                    <div class="contact-info">
+                                        <p>Sathesh Kumar</p>
+                                        <p>sathesh.designer@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary contact-panel">
+                                <div class="panel-body">
+                                    <div class="contact-pics">
+                                        <img src="images/contact-default-avatar.png" alt="contact name">
+                                    </div>
+                                    <div class="contact-info">
+                                        <p>Sathesh Kumar</p>
+                                        <p>sathesh.designer@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary contact-panel">
+                                <div class="panel-body">
+                                    <div class="contact-pics">
+                                        <img src="images/contact-default-avatar.png" alt="contact name">
+                                    </div>
+                                    <div class="contact-info">
+                                        <p>Sathesh Kumar</p>
+                                        <p>sathesh.designer@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" value="sath@gmail.com, sat@gmail.com, sim@gmail.com" class="form-control" id="inattd" placeholder="" ng-model="eventData.inattd" required name="inattd">
+                    <div ng-messages="eventForm.inattd.$error" ng-if="interacted(eventForm.inattd)" class="error-info">
+                        <p ng-message="required">Event name is required.</p>
+                    </div>
+                    <p class="form-link"><a role="button" data-toggle="" data-target="#addAttend"><span class="add-sign">+</span> Add more attendees</a></p>
+                  </div>	
+                  <input type="hidden" ng-model="eventData.uid" id="uid">
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="assignValue()">Create</button>
+                </form>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-12">
+        	<h4 class="prime-title mb20"><span>Upcoming Events</span></h4>
+        	<div class="panel panel-info">
+            	<div class="panel-heading" title="Meet up with college friends">
+                	Meet up with college friends 
+                </div>
+                <div class="panel-body">
+                	<p>20 Feb 2016, 10:00am - 4:00pm </p>
+                    <p class="small">Venue: Hiton hotel, singapore</p>
+                </div>
+                <div class="panel-footer">
+                	<a href=""><span class="icon-arrow-right"></span> Show full details</a>
+                </div>
+            </div>
+            <div class="panel panel-info">
+            	<div class="panel-heading" title="Meet up with college friends">
+                	Meet up with college friends 
+                </div>
+                <div class="panel-body">
+                	<p>20 Feb 2016, 10:00am - 4:00pm </p>
+                    <p class="small">Venue: Hiton hotel, singapore</p>
+                </div>
+                <div class="panel-footer">
+                	<a href=""><span class="icon-arrow-right"></span> Show full details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer ng-include="template[1].url"></footer>

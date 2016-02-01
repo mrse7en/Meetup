@@ -1,0 +1,112 @@
+<header class="white-header" ng-include="template[0].url"></header>
+<div class="container">
+	<ol class="breadcrumb">
+      <li><a href="#home">Home</a></li>
+      <li class="active">{{pageName}}</li>
+    </ol>
+    <div class="row">
+    	<div class="col-md-3 col-xs-12">
+        	<aside class="side-panel collapse" id="sidepanel">
+            	<div class="avatar">
+                <img src="images/default-avatar.png">
+                <p class="welcome">
+                    Welcome, {{username}}
+                </p>
+            </div>
+            <div class="list-group">
+             <a href="#profile" class="list-group-item active"><span class="icon icon-person"></span> Your Profile</a>
+              <a href="#create-event" class="list-group-item"><span class="icon icon-event_available"></span> Create an Event</a>
+              <a href="#manage-events" class="list-group-item"><span class="icon icon-event_note"></span> Manage Events</a>
+               <a href="#contacts" class="list-group-item"><span class="icon icon-perm_contact_calendar"></span> Contacts</a>
+              <a href="#login" class="list-group-item" ng-click="logout()"><span class="icon icon-exit_to_app"></span> Logout</a>
+            </div>
+            </aside>
+        </div>
+        <div class="col-md-6 col-xs-12">
+        	<div class="panel panel-default">
+              <div class="panel-heading prime-title"><span>Your Profile</span></div>
+              <div class="panel-body">
+                <form role="form">
+                  <div class="form-group edit-text">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" id="fname" placeholder="" readonly value="{{proData.fname}}">
+                    <label class="label label-default">edit</label>
+                  </div>
+                  <div class="form-group edit-text">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" id="lname" placeholder="" readonly value="{{proData.lname}}">
+                    <label class="label label-default">edit</label>
+                  </div>
+                  <div class="form-group edit-text">
+                    <label for="dob">Date of Birth</label>
+                    <input type="text" class="form-control" id="dob" placeholder="" readonly value="{{proData.dob}}">
+                  </div>
+                  <div class="form-group edit-text">
+                    <label for="country">Country</label>
+                    <input type="text" class="form-control" id="country" placeholder="" readonly value="{{proData.Country}}">
+                  </div>
+                  <div class="form-group edit-text">
+                    <label for="email">Email Address</label>
+                    <input type="text" class="form-control" id="email" placeholder="" readonly value="{{proData.email}}">
+                  </div>
+                  <div class="form-group edit-text">
+                    <label for="pass">Change Password</label>
+                    <input type="password" class="form-control" id="pass" placeholder="" readonly value="test">
+                  </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-12">
+        	<h4 class="prime-title mb20"><span>Upcoming Events</span></h4>
+        	<div class="panel panel-info">
+            	<div class="panel-heading" title="Meet up with college friends">
+                	Meet up with college friends 
+                </div>
+                <div class="panel-body">
+                	<p>20 Feb 2016, 10:00am - 4:00pm </p>
+                    <p class="small">Venue: Hiton hotel, singapore</p>
+                </div>
+            </div>
+            <div class="panel panel-info">
+            	<div class="panel-heading" title="Meet up with college friends">
+                	Meet up with college friends 
+                </div>
+                <div class="panel-body">
+                	<p>20 Feb 2016, 10:00am - 4:00pm </p>
+                    <p class="small">Venue: Hiton hotel, singapore</p>
+                </div>
+                <div class="panel-footer">
+                	<a href=""><span class="icon-arrow-right"></span> Show full details</a>
+                </div>
+            </div>
+            <h4 class="prime-title mb20"><span>Recent Events</span></h4>
+        	<div class="panel panel-info">
+            	<div class="panel-heading" title="Meet up with college friends">
+                	Meet up with college friends 
+                </div>
+                <div class="panel-body">
+                	<p>20 Feb 2016, 10:00am - 4:00pm </p>
+                    <p class="small">Venue: Hiton hotel, singapore</p>
+                </div>
+                <div class="panel-footer">
+                	<a href=""><span class="icon-arrow-right"></span> Show full details</a>
+                </div>
+            </div>
+            <div class="panel panel-info">
+            	<div class="panel-heading" title="Meet up with college friends">
+                	Meet up with college friends 
+                </div>
+                <div class="panel-body">
+                	<p>20 Feb 2016, 10:00am - 4:00pm </p>
+                    <p class="small">Venue: Hiton hotel, singapore</p>
+                </div>
+                <div class="panel-footer">
+                	<a href=""><span class="icon-arrow-right"></span> Show full details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer ng-include="template[1].url"></footer>

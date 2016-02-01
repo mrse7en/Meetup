@@ -1,0 +1,491 @@
+@font-face 
+	+customFont('icomoon', $font-url, 'icomoon')
+body
+	background: $body-bg
+	font-family: $primary-font
+	font-size: $default-font-size
+	font-weight: $default-font-weight
+a
+	color: $primary-color
+	&:hover
+		color: $primary-color
+.body-mask
+	position: fixed
+	top: 0
+	left: 0
+	background: rgba($shade, 0.7)
+	z-index: 10
+	height: 100%
+	width: 100%
+	display: none
+.mt10
+	margin-top: 10px !important
+.mb10
+	margin-bottom: 10px !important
+.mt15
+	margin-top: 15px !important
+.mb15
+	margin-bottom: 15px !important
+.mt20
+	margin-top: 20px !important
+.mb20
+	margin-bottom: 20px !important
+.mtb20
+	margin: 20px 0 !important
+header
+	background: $light
+	+shadow(0 0 5px lighten($shade, 80%))
+	.navbar-brand
+		padding: 10px 15px 10px 0
+	.btn
+		margin-top: 11px
+	.navbar-toggle
+		color: $primary-color
+footer
+	background: $light
+	+shadow(0 0 5px lighten($shade, 80%))
+	margin-top: 30px
+	p
+		margin: 15px 0
+		font-size: em(14px)
+blockquote
+	border: none
+.navbar-brand
+	height: auto
+	&.fixed-logo
+		position: relative
+		top: 40px
+		left: 30%
+.btn
+	text-transform: $default-btn-text
+	+transit()
+	+radius(3px)
+.btn-default
+	border-color: $primary-color
+	color: $primary-color
+	&:hover, &:active, &:focus , &:focus:active, &.disabled:hover
+		background: $primary-color
+		color: $light
+		outline: none
+		border-color: $primary-color
+.btn-primary
+	border-color: $primary-color
+	background: $primary-color
+	&:hover, &:active, &:focus , &:focus:active, &.disabled:hover
+		background: lighten($primary-color, 5%)
+		outline: none
+		border-color: lighten($primary-color, 5%)
+.btn-lg
+	padding: 10px 30px
+.btn-circle
+	+radius(50%)
+	min-height: 46px
+	.icon
+		font-size: em(24px)
+		border-bottom: none
+.full-screen-bg
+	.carousel-inner 
+		height: 100%
+		overflow: auto
+		>.item
+			width: 100%
+			height: 100vh
+			background: url($img-path+'intro-bg.jpg') no-repeat
+			position: relative
+			background-size: cover
+			>img
+				width: 100%
+	.carousel-caption
+		top: 26%
+		text-align: left
+		left: 5%
+		right: auto
+		blockquote
+			font-size: 35px
+			margin-bottom: 80px
+		p
+			padding: 10px 20px
+			margin-bottom: 30px
+		.btn
+			margin-left: 20px
+			&.btn-round
+				background: none
+				+radius(30px)
+				border: $light solid 1px
+				color: $light
+				padding: 12px 35px
+				font-size: em(20px)
+				text-transform: inherit
+				font-weight: $default-font-weight
+				&:hover, &:active, &:focus
+					background: $primary-color
+					border-color: $primary-color
+.breadcrumb
+	background: none
+	margin-top: 15px
+.form-group
+	position: relative
+	label
+		text-transform: uppercase
+		font-weight: $bold
+		font-size: em(14px)
+		sup
+			color: $error
+.multiple-fields
+	width: 100%
+	.form-control
+		float: left
+		width: 33.3%
+		min-width: 90px
+.form-control
+	height: 50px
+	border-color: lighten($shade, 85%)
+.panel-default
+	border: none
+	padding: $panel-padding
+	+shadow(1px 0 3px lighten($shade, 80%))
+	.panel-heading
+		background: none
+		border-bottom: none
+		font-size: em(20px)
+	.btn
+		margin: 10px 0 15px
+
+.panel-info
+	border: none
+	padding: 0
+	+shadow(1px 0 3px lighten($shade, 80%))
+	.panel-heading
+		background: $light
+		@extend %panel-padding
+		text-decoration: none
+		font-size: em(14px)
+		font-weight: $bold
+		color: $primary-color
+		text-overflow: ellipsis
+		border-bottom-color: lighten($shade, 80%)
+	.panel-footer
+		background: none
+		@extend %panel-padding
+		border-top-color: lighten($shade, 80%)
+		font-size: em(13px)
+		a
+			color: lighten($shade, 40%)
+			&:hover
+				text-decoration: none
+				color: $primary-color
+	.panel-body
+		@extend %panel-padding	
+		p
+			font-weight: $bolder
+			font-size: em(15px)
+			line-height: 18px
+			margin-bottom: 5px
+		.small
+			font-size: em(13px)
+			color: lighten($shade, 70%)	
+			margin-bottom: 0
+			font-weight: $default-font-weight
+	&.current-panel
+		background: $primary-color
+		.panel-heading
+			background: $primary-color
+			@extend %panel-text-color
+			border-bottom-color: lighten($primary-color, 10%)
+		.panel-body
+			@extend %panel-text-color
+			.small
+				@extend %panel-text-color
+		.panel-footer
+			border-top-color: lighten($primary-color, 10%)
+			a
+				@extend %panel-text-color
+%panel-text-color
+	color: $light
+%panel-padding
+	padding: 10px 15px	
+.panel-primary.contact-panel
+	border: none
+	+shadow(none)
+	background: lighten($shade, 95%)
+	+radius(3px)
+	position: relative
+	margin-bottom: 5px
+	.panel-body
+		padding: 5px
+	.contact-pics
+		float: left
+		width: 45px
+		font-size: em(32px)
+		color: lighten($shade, 80%)
+		text-align: center
+		margin-right: 10px
+		img
+			width: 100%
+			display: block
+	.contact-info
+		font-size: em(13px)
+		padding: 5px 10px
+		p
+			margin: 0
+	&:hover .edit-panel
+		opacity: 1
+.panel-group
+	margin-bottom: 0
+.panel-heading 
+	position: relative
+	.btn-circle
+		position: absolute
+		right: 0
+		top: -10px
+.login-panel
+	width: 80%
+	margin: 0 auto
+.edit-panel
+	position: absolute
+	top: 5px
+	right: 5px
+	opacity: 0
+	+transit()
+	span
+		background: lighten($shade,80%)
+		font-size: 11px !important
+		cursor: pointer
+		+radius(50%)
+		height: 20px
+		width: 20px
+		padding: 3px
+		text-align: center
+		color: lighten($shade,50%)
+		&:hover
+			color: $light
+			background: $primary-color
+.duel-panel
+	overflow: hidden
+	.panel-left
+		float: left
+		width: 50%
+		padding-right: $panel-padding
+		border-right: lighten($shade, 85%) solid 1px
+		&:last-child
+			padding-left: $panel-padding
+			padding-right: 0
+			border-right: none		
+.prime-title
+	text-transform: uppercase
+	margin: 0
+	font-weight: $bolder
+	span
+		border-bottom: $primary-color solid 2px	    
+.sec-title
+	color: $primary-color
+	margin-bottom: 20px
+.ol
+	line-height: 35px
+	font-size: em(14px)
+	padding-left: 15px
+.side-panel
+	padding: 0 0 20px
+	+radius(3px)
+	+shadow(1px 0 3px lighten($shade, 80%))
+	background: $light	
+	.aside-header
+		padding: 10px 15px
+	.list-group
+		margin: 10px 0 0
+		a
+			border: none
+			&.active
+				color: lighten($shade, 35%)
+				+radius(0)
+				background: lighten($shade, 90%)
+			.icon
+				font-size: em(20px)
+				display: block
+				float: left
+				margin-right: 8px
+	&.collapse
+		display: block
+	.avatar
+		background: $primary-color
+		text-align: center
+		color: $light
+		padding: 20px
+		+radius(3px 3px 0 0)
+		p
+			margin: 10px 0 0
+			font-weight: $bold
+			text-transform: capitalize
+		img
+			width: 60%
+			
+.form-link
+	margin-top: 10px
+.add-sign
+	font-size: em(18px)
+.edit-text
+	position: relative
+	input[readonly]
+		background: none
+		+shadow(none)
+		border: none
+		padding: 0
+		height: auto
+	.label
+		position: absolute
+		top: 0
+		right: 0
+		font-size: em(11px)
+		cursor: pointer
+		opacity: 0
+		+transit()
+		&.label-default
+			background: lighten($shade, 80%)
+			&:hover
+				background: $primary-color
+	&:hover .label
+		opacity: 1
+.error-info
+	position: absolute
+	top: 0
+	right: 0
+	p, div
+		margin: 0
+		color: $light
+		font-size: em(11px)
+		background: $error
+		+radius(3px)
+		padding: 2px 10px
+		text-transform: uppercase
+	.success
+		background: $success
+	.warning
+		background: $warning
+#map, #eventMap
+	min-height: 300px
+	width: 100%
+	margin-top: 20px
+.controls
+	margin-top: 10px
+	border: 1px solid transparent
+	border-radius: 2px 0 0 2px
+	box-sizing: border-box
+	-moz-box-sizing: border-box
+	height: 32px
+	outline: none
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3)
+#pac-input
+	background-color: #fff
+	font-family: Roboto
+	font-size: 15px
+	font-weight: 300
+	margin-left: 12px
+	padding: 0 11px 0 13px
+	text-overflow: ellipsis
+	width: 300px
+#pac-input:focus
+	border-color: #4d90fe
+.pac-container
+	font-family: Roboto
+#type-selector
+	color: #fff
+	background-color: #4d90fe
+	padding: 5px 11px 0px 11px
+#type-selector label
+	font-family: Roboto
+	font-size: 13px
+	font-weight: 300
++respond-to(smaller-pc)
+	.navbar-toggle
+		display: block
+		font-size: em(24px)
+	.side-panel.collapse
+		position: fixed
+		z-index: 12
+		height: 100vh !important
+		top: 66px
+		left: -100%
+		border-radius: 0
+		+transit()
+		+shadow(none)
+		&.in
+			left: 0
+	.body-mask
+		display: none
+	.duel-panel .panel-left
+		width: 100%
+		padding-right: 0
+		border-right: none	
+		&:last-child
+			padding-left: 0
+	.panel-default
+		margin-bottom: 15px	
+	.login-panel
+		width: 100%	
+	.navbar-brand.fixed-logo
+		left: 15%
+	.full-screen-bg
+		.carousel-inner 
+			>.item
+				background-attachment: fixed
+				position: fixed
+				height: 100%
+				overflow: auto
+				padding-bottom: 50px
+		.carousel-caption
+			blockquote 
+				font-size: em(28px)
+			.btn.btn-round
+				margin-bottom: 20px
++respond-to(tablets)
+	.navbar-brand.fixed-logo
+		left: 0
+		width: 100%
+		text-align: center
+		img
+			display: inline-block
++respond-to(phones)
+	body
+		font-size: $default-font-size - 2
+	.panel-default
+		padding: 15px
+	.sec-title
+		font-size: em(20px)
+	.form-control
+		height: 40px
+	.prime-title
+		text-align: center
+		&.panel-heading
+			text-align: left
+	.multiple-fields .form-control
+		width: 33.33%
+		min-width: 1px
+	.ol
+		line-height: 20px
+	
+	.full-screen-bg
+		.carousel-caption
+			top: 13%
+			blockquote
+				margin-bottom: 40px
+	.navbar-brand.fixed-logo
+		padding: 0
+		top: 20px
+		img
+			max-width: 100%
+			height: 55px
++respond-to(smaller-phones)
+	body
+		min-width: 290px
+	.panel-default
+		padding: 5px
+	.sec-title
+		font-size: em(18px)
+	.form-control
+		height: 35px
+	.prime-title
+		font-size: em(20px)
+	.btn-lg
+		padding: 7px 15px
+		
+	

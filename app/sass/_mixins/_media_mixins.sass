@@ -1,0 +1,13 @@
+=respond-to($media) 
+	@if $media == smaller-pc 
+		@media screen and (max-width: $small-desktop)
+			@content
+	@else if $media == tablets 
+		@media screen and (max-width: $tablets)
+			@content
+	@else if $media == phones 
+		@media screen and (max-width: $phones)
+			@content
+	@else if $media == smaller-phones 
+		@media screen and (max-width: $phones)
+			@content

@@ -1,0 +1,238 @@
+<header class="white-header" ng-include="template[0].url"></header>
+<div class="container">
+	<ol class="breadcrumb">
+      <li><a href="#home">Home</a></li>
+      <li class="active">{{pageName}}</li>
+    </ol>
+    <div class="row">
+    	<div class="col-md-3 col-xs-12">
+        	<aside class="side-panel collapse" id="sidepanel">
+            	<div class="avatar">
+                <img src="images/default-avatar.png">
+                <p class="welcome">
+                    Welcome, {{username}}
+                </p>
+            </div>
+            <div class="list-group">
+             <a href="#profile" class="list-group-item"><span class="icon icon-person"></span> Your Profile</a>
+              <a href="#create-event" class="list-group-item"><span class="icon icon-event_available"></span> Create an Event</a>
+              <a href="#manage-events" class="list-group-item"><span class="icon icon-event_note"></span> Manage Events</a>
+               <a href="#contacts" class="list-group-item active"><span class="icon icon-perm_contact_calendar"></span> Contacts</a>
+              <a href="#login" class="list-group-item" ng-click="logout()"><span class="icon icon-exit_to_app"></span> Logout</a>
+            </div>
+            </aside>
+        </div>
+        <div class="col-md-9 col-xs-12">
+			<div class="panel panel-default">
+              <div class="panel-heading prime-title">
+              	<span>Your Contacts</span>
+                <button role="button" data-toggle="collapse" data-target="#addAttend" class="btn btn-circle btn-primary"><span class="icon icon-add"></span></button>
+              </div>
+              <div class="panel-body">
+                        <div class="well collapse" id="addAttend">	
+                              <div class="form-group">
+                                <label for="afname">Attendee First Name</label>
+                                <input type="text" class="form-control" id="afname" placeholder="">
+                              </div>
+                              <div class="form-group">
+                                <label for="passkey">Attendee Last Name</label>
+                                <input type="text" class="form-control" id="alname" placeholder="">
+                              </div>
+                              <div class="form-group">
+                                <label for="aemail">Attendee Email Address</label>
+                                <input type="text" class="form-control" id="aemail" placeholder="">
+                              </div>
+                              <button class="btn btn-primary btn-lg">Add</button>
+                          </div>
+                    	<div class="row">
+                        	<div class="col-xs-12 col-md-6">
+                            	<div class="panel panel-primary contact-panel">
+                                    <div class="panel-body">
+                                        <div class="contact-pics">
+                                            <img src="images/contact-default-avatar.png" alt="contact name">
+                                        </div>
+                                        <div class="contact-info">
+                                            <p>Sathesh Kumar</p>
+                                            <p>sathesh.designer@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <label class="edit-panel"><span class="icon-edit"></span></label>
+                                </div>
+                        		<div class="panel panel-primary contact-panel">
+                                    <div class="panel-body">
+                                        <div class="contact-pics">
+                                            <img src="images/contact-default-avatar.png" alt="contact name">
+                                        </div>
+                                        <div class="contact-info">
+                                            <p>Sathesh Kumar</p>
+                                            <p>sathesh.designer@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <label class="edit-panel"><span class="icon-edit"></span></label>
+                                </div>
+                        		<div class="panel panel-primary contact-panel">
+                                    <div class="panel-body">
+                                        <div class="contact-pics">
+                                            <img src="images/contact-default-avatar.png" alt="contact name">
+                                        </div>
+                                        <div class="contact-info">
+                                            <p>Sathesh Kumar</p>
+                                            <p>sathesh.designer@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <label class="edit-panel"><span class="icon-edit"></span></label>
+                                </div>
+                        		<div class="panel panel-primary contact-panel">
+                                    <div class="panel-body">
+                                        <div class="contact-pics">
+                                            <img src="images/contact-default-avatar.png" alt="contact name">
+                                        </div>
+                                        <div class="contact-info">
+                                            <p>Sathesh Kumar</p>
+                                            <p>sathesh.designer@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <label class="edit-panel"><span class="icon-edit"></span></label>
+                                </div>
+                        		<div class="panel panel-primary contact-panel">
+                                    <div class="panel-body">
+                                        <div class="contact-pics">
+                                            <img src="images/contact-default-avatar.png" alt="contact name">
+                                        </div>
+                                        <div class="contact-info">
+                                            <p>Sathesh Kumar</p>
+                                            <p>sathesh.designer@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <label class="edit-panel"><span class="icon-edit"></span></label>
+                                </div>
+                        		<div class="panel panel-primary contact-panel">
+                                    <div class="panel-body">
+                                        <div class="contact-pics">
+                                            <img src="images/contact-default-avatar.png" alt="contact name">
+                                        </div>
+                                        <div class="contact-info">
+                                            <p>Sathesh Kumar</p>
+                                            <p>sathesh.designer@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <label class="edit-panel"><span class="icon-edit"></span></label>
+                                </div>
+                        		<div class="panel panel-primary contact-panel">
+                                    <div class="panel-body">
+                                        <div class="contact-pics">
+                                            <img src="images/contact-default-avatar.png" alt="contact name">
+                                        </div>
+                                        <div class="contact-info">
+                                            <p>Sathesh Kumar</p>
+                                            <p>sathesh.designer@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <label class="edit-panel"><span class="icon-edit"></span></label>
+                                </div>
+                        		<div class="panel panel-primary contact-panel">
+                                    <div class="panel-body">
+                                        <div class="contact-pics">
+                                            <img src="images/contact-default-avatar.png" alt="contact name">
+                                        </div>
+                                        <div class="contact-info">
+                                            <p>Sathesh Kumar</p>
+                                            <p>sathesh.designer@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <label class="edit-panel"><span class="icon-edit"></span></label>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                            	<div class="panel panel-primary contact-panel">
+                                    <div class="panel-body">
+                                        <div class="contact-pics">
+                                            <img src="images/contact-default-avatar.png" alt="contact name">
+                                        </div>
+                                        <div class="contact-info">
+                                            <p>Sathesh Kumar</p>
+                                            <p>sathesh.designer@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <label class="edit-panel"><span class="icon-edit"></span></label>
+                                </div>
+                        		<div class="panel panel-primary contact-panel">
+                                    <div class="panel-body">
+                                        <div class="contact-pics">
+                                            <img src="images/contact-default-avatar.png" alt="contact name">
+                                        </div>
+                                        <div class="contact-info">
+                                            <p>Sathesh Kumar</p>
+                                            <p>sathesh.designer@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <label class="edit-panel"><span class="icon-edit"></span></label>
+                                </div>
+                        		<div class="panel panel-primary contact-panel">
+                                    <div class="panel-body">
+                                        <div class="contact-pics">
+                                            <img src="images/contact-default-avatar.png" alt="contact name">
+                                        </div>
+                                        <div class="contact-info">
+                                            <p>Sathesh Kumar</p>
+                                            <p>sathesh.designer@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <label class="edit-panel"><span class="icon-edit"></span></label>
+                                </div>
+                        		<div class="panel panel-primary contact-panel">
+                                    <div class="panel-body">
+                                        <div class="contact-pics">
+                                            <img src="images/contact-default-avatar.png" alt="contact name">
+                                        </div>
+                                        <div class="contact-info">
+                                            <p>Sathesh Kumar</p>
+                                            <p>sathesh.designer@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <label class="edit-panel"><span class="icon-edit"></span></label>
+                                </div>
+                        		<div class="panel panel-primary contact-panel">
+                                    <div class="panel-body">
+                                        <div class="contact-pics">
+                                            <img src="images/contact-default-avatar.png" alt="contact name">
+                                        </div>
+                                        <div class="contact-info">
+                                            <p>Sathesh Kumar</p>
+                                            <p>sathesh.designer@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <label class="edit-panel"><span class="icon-edit"></span></label>
+                                </div>
+                        		<div class="panel panel-primary contact-panel">
+                                    <div class="panel-body">
+                                        <div class="contact-pics">
+                                            <img src="images/contact-default-avatar.png" alt="contact name">
+                                        </div>
+                                        <div class="contact-info">
+                                            <p>Sathesh Kumar</p>
+                                            <p>sathesh.designer@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <label class="edit-panel"><span class="icon-edit"></span></label>
+                                </div>
+                        		<div class="panel panel-primary contact-panel">
+                                    <div class="panel-body">
+                                        <div class="contact-pics">
+                                            <img src="images/contact-default-avatar.png" alt="contact name">
+                                        </div>
+                                        <div class="contact-info">
+                                            <p>Sathesh Kumar</p>
+                                            <p>sathesh.designer@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <label class="edit-panel"><span class="icon-edit"></span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+        </div>
+    </div>
+</div>
+<footer ng-include="template[1].url"></footer>

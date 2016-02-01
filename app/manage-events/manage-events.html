@@ -1,0 +1,159 @@
+<header class="white-header" ng-include="template[0].url"></header>
+<div class="container">
+	<ol class="breadcrumb">
+      <li><a href="#home">Home</a></li>
+      <li class="active">{{pageName}}</li>
+    </ol>
+    <div class="row">
+    	<div class="col-md-3 col-xs-12">
+        	<aside class="side-panel collapse" id="sidepanel">
+            	<div class="avatar">
+                <img src="images/default-avatar.png">
+                <p class="welcome">
+                   Welcome, {{username}}
+                </p>
+            </div>
+            <div class="list-group">
+             <a href="#profile" class="list-group-item"><span class="icon icon-person"></span> Your Profile</a>
+              <a href="#create-event" class="list-group-item"><span class="icon icon-event_available"></span> Create an Event</a>
+              <a href="#manage-events" class="list-group-item active"><span class="icon icon-event_note"></span> Manage Events</a>
+               <a href="#contacts" class="list-group-item"><span class="icon icon-perm_contact_calendar"></span> Contacts</a>
+              <a href="#login" class="list-group-item" ng-click="logout()"><span class="icon icon-exit_to_app"></span> Logout</a>
+            </div>
+            </aside>
+        </div>
+        <div class="col-md-6 col-xs-12">
+        	<div class="panel panel-default">
+              <div class="panel-heading prime-title"><span>Meet up with college friends</span></div>
+              <div class="panel-body">
+                <form role="form">
+                  <div class="form-group edit-text">
+                    <label for="ename">Event Name</label>
+                    <input type="text" class="form-control" id="ename" placeholder="" readonly value="{{eventData.ename}}">
+                    <label class="label label-default">edit</label>
+                  </div>
+                  <div class="form-group edit-text">
+                    <label for="egloc">Event Venue Geoloaction</label>
+                    <input type="text" class="form-control" id="egloc" placeholder="" readonly value="{{eventData.egloc}}">
+                    <label class="label label-default">edit</label>
+                    
+                  </div>
+                  <div class="form-group edit-text">
+                    <label for="evname">Event Venue Name</label>
+					<input type="text" class="form-control" id="evname" placeholder="" readonly value="{{eventData.venue}}">
+                    <label class="label label-default">edit</label>
+                  </div>
+                  <div class="form-group edit-text">
+                    <label for="edate">Event Date &amp; Time</label>
+                    <input type="text" class="form-control" id="edate" placeholder="" readonly value="{{eventData.datetime}}">
+                    <label class="label label-default">edit</label>
+                  </div>
+                  <div class="form-group edit-text">
+                    <label for="attend">Attendees</label>
+                    <div class="row">
+                        <div class="panel-group col-xs-12 col-md-8">
+                            <div class="panel panel-primary contact-panel">
+                                <div class="panel-body">
+                                    <div class="contact-pics">
+                                        <img src="images/contact-default-avatar.png" alt="contact name">
+                                    </div>
+                                    <div class="contact-info">
+                                        <p>Sathesh Kumar</p>
+                                        <p>sathesh.designer@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary contact-panel">
+                                <div class="panel-body">
+                                    <div class="contact-pics">
+                                        <img src="images/contact-default-avatar.png" alt="contact name">
+                                    </div>
+                                    <div class="contact-info">
+                                        <p>Sathesh Kumar</p>
+                                        <p>sathesh.designer@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary contact-panel">
+                                <div class="panel-body">
+                                    <div class="contact-pics">
+                                        <img src="images/contact-default-avatar.png" alt="contact name">
+                                    </div>
+                                    <div class="contact-info">
+                                        <p>Sathesh Kumar</p>
+                                        <p>sathesh.designer@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary contact-panel">
+                                <div class="panel-body">
+                                    <div class="contact-pics">
+                                        <img src="images/contact-default-avatar.png" alt="contact name">
+                                    </div>
+                                    <div class="contact-info">
+                                        <p>Sathesh Kumar</p>
+                                        <p>sathesh.designer@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="form-link"><a role="button" data-toggle="collapse" data-target="#addAttend" class="" aria-expanded="true"><span class="add-sign">+</span> Invite more attendees</a></p>
+                  </div>
+                    <button type="submit" class="btn btn-primary disabled">Update</button>
+                </form>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-12">
+        	<h4 class="prime-title mb20"><span>Upcoming Events</span></h4>
+        	<div class="panel panel-info current-panel">
+            	<div class="panel-heading" title="Meet up with college friends">
+                	Meet up with college friends 
+                </div>
+                <div class="panel-body">
+                	<p>20 Feb 2016, 10:00am - 4:00pm </p>
+                    <p class="small">Venue: Hiton hotel, singapore</p>
+                </div>
+            </div>
+            <div class="panel panel-info">
+            	<div class="panel-heading" title="Meet up with college friends">
+                	Meet up with college friends 
+                </div>
+                <div class="panel-body">
+                	<p>20 Feb 2016, 10:00am - 4:00pm </p>
+                    <p class="small">Venue: Hiton hotel, singapore</p>
+                </div>
+                <div class="panel-footer">
+                	<a href=""><span class="icon-arrow-right"></span> Show full details</a>
+                </div>
+            </div>
+            <h4 class="prime-title mb20"><span>Recent Events</span></h4>
+        	<div class="panel panel-info">
+            	<div class="panel-heading" title="Meet up with college friends">
+                	Meet up with college friends 
+                </div>
+                <div class="panel-body">
+                	<p>20 Feb 2016, 10:00am - 4:00pm </p>
+                    <p class="small">Venue: Hiton hotel, singapore</p>
+                </div>
+                <div class="panel-footer">
+                	<a href=""><span class="icon-arrow-right"></span> Show full details</a>
+                </div>
+            </div>
+            <div class="panel panel-info">
+            	<div class="panel-heading" title="Meet up with college friends">
+                	Meet up with college friends 
+                </div>
+                <div class="panel-body">
+                	<p>20 Feb 2016, 10:00am - 4:00pm </p>
+                    <p class="small">Venue: Hiton hotel, singapore</p>
+                </div>
+                <div class="panel-footer">
+                	<a href=""><span class="icon-arrow-right"></span> Show full details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer ng-include="template[1].url"></footer>

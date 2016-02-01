@@ -1,0 +1,139 @@
+<header class="white-header" ng-include="template[0].url"></header>
+<div class="container">
+	<ol class="breadcrumb">
+      <li><a href="#home">Home</a></li>
+      <li class="active">{{pageName}}</li>
+    </ol>
+    <div class="row">
+        <div class="col-xs-12">
+        	<div class="panel panel-default duel-panel">
+              <div class="panel-left">
+                  <div class="panel-heading prime-title"><span>Member Registration form</span></div>
+                  <div class="panel-body">
+                    <form role="form" name="regForm" novalidate ng-submit="submit()">
+                    	<div class="form-group" ng-class="{ 'has-error': regForm.fname.$touched && regForm.fname.$invalid }">
+                        <label for="fname">First Name <sup>*</sup></label>
+                        <input type="text" class="form-control" id="fname" placeholder="" ng-model="signUpData.fname" ng-minlength="2" ng-maxlength="50" required name="fname">
+                        <div ng-messages="regForm.fname.$error" ng-if="interacted(regForm.fname)" class="error-info">
+                            <p ng-message="minlength">Your name is too short.</p>
+                            <p ng-message="maxlength">Your name is too long.</p>
+                            <p ng-message="required">Your name is required.</p>
+                        </div>
+                      </div>
+                      <div class="form-group"  ng-class="{ 'has-error': regForm.lname.$touched && regForm.lname.$invalid }">
+                        <label for="lname">Last Name <sup>*</sup></label>
+                        <input type="text" class="form-control" id="lname" placeholder="" ng-model="signUpData.lname" name="lname" ng-minlength="2" ng-maxlength="50" required>
+                          <div ng-messages="regForm.lname.$error" ng-if="interacted(regForm.lname)" class="error-info">
+                            <p ng-message="minlength">Last name is too short.</p>
+                            <p ng-message="maxlength">Last name is too long.</p>
+                            <p ng-message="required">Last name is required.</p>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="dob">Date of Birth <sup>*</sup></label>
+                        <div class="input-group multiple-fields">
+                          <select class="form-control" ng-model="signUpData.day" name="dobday" required>
+                          	<option value="" ng-selected="selected">Day</option>
+                          	<option ng-repeat="day in dobDays" value="{{day}}">{{day}}</option>
+                          </select>
+                          <select class="form-control" ng-model="signUpData.month" name="dobmonth" required>
+                          	<option value="" ng-selected="selected">Month</option>
+                            <option ng-repeat="month in dobMonths" value="{{month}}">{{month}}</option>
+                          </select>
+                          <select class="form-control" ng-model="signUpData.year" name="dobyear" id="dobyear" required>
+                          	<option value="" ng-selected="selected">Year</option>
+                            <option ng-repeat="year in dobYears" value="{{year}}">{{year}}</option>
+                          </select>
+                        </div>
+                        <div class="error-info" ng-if="interacted(regForm.dobyear)" ng-messages="regForm.dobyear.$error">
+                        	<div ng-message="required">Please select a year</div>
+                      	</div>
+                        <div class="error-info" ng-if="interacted(regForm.dobmonth)" ng-messages="regForm.dobmonth.$error">
+                        	<div ng-message="required">Please select a month</div>
+                      	</div>
+                        <div class="error-info" ng-if="interacted(regForm.dobday)" ng-messages="regForm.dobday.$error">
+                        	<div ng-message="required">Please select a day</div>
+                      	</div>
+                      </div>
+                       <div class="form-group" ng-class="{ 'has-error': regForm.nation.$touched && regForm.nation.$invalid }">
+                        <label for="nation">Country <sup>*</sup></label>
+                        <select  class="form-control" name="location" id="location" ng-model="signUpData.location" ng-options="location.name as location.name for location in locations" required>
+                        	<option value="" ng-selected="selected">Select your country</option>
+                        </select>
+                      <div class="error-info" ng-if="interacted(regForm.location)" ng-messages="regForm.location.$error">
+                        <div ng-message="required">Please select a location</div>
+                      </div>
+                      </div>
+                        <div class="form-group" ng-class="{ 'has-error': regForm.email.$touched && regForm.email.$invalid }">
+                        <label for="email">Email address <sup>*</sup></label>
+                        <input type="email" class="form-control" id="email" placeholder="" ng-model="signUpData.email" fake-remote-record-validator="fakeEmails" ng-minlength="2" ng-maxlength="50" required name="email">
+                         <div ng-messages="regForm.email.$error" class="error-info" ng-if="interacted(regForm.email)">
+                            <p ng-message="required">Email is required</p>
+                            <p ng-message="minlength">Email is too short</p>
+                            <p ng-message="maxlength">Email is too long</p>
+                            <p ng-message="required">Email is required</p>
+                            <p ng-message="email">Please Enter a valid email address</p>
+                            <div class="success" ng-message="record-loading">Checking database...</div>
+							<div class="warning" ng-message="record-taken">Sorry, but {{ $parent.signUpData.email }} is already taken</div>
+                        </div> 
+                      </div>
+                      <div class="form-group" ng-class="{ 'has-error': regForm.passkey.$touched && regForm.passkey.$invalid }">
+                        <label for="passkey">Password <sup>*</sup></label>
+                        <input class="form-control"
+                                 type="password"
+                                 name="passkey"
+                                 id="passkey"
+                                 ng-model="signUpData.passkey"
+                                 ng-minlength="6"
+                                 ng-maxlength="15"
+                                 ng-pattern="passwordPattern"
+                                 password-characters-validator
+                                 required />
+                          <div class="error-info" ng-if="interacted(regForm.passkey)" ng-messages="regForm.passkey.$error">
+                          	<p ng-message="minlength">Password minimum length is 6</p>
+        					<p ng-message="maxlength">Password max length is 15</p>
+                            <p ng-message="pattern">Password must contains a number &amp; a special character </p>
+                            <p ng-message="required">Your name is required.</p>
+                          </div>
+                      </div>
+                      <div class="form-group" ng-class="{ 'has-error': regForm.confirmPassword.$touched && regForm.confirmPassword.$invalid }">
+                       <label for="confirmPassword">Confirm password <sup>*</sup></label>
+                      <input class="form-control"
+                             type="password"
+                             name="confirmPassword"
+                             id="confirmPassword"
+                             ng-model="signUpData.confirmPassword"
+                             ng-minlength="6"
+                             ng-maxlength="12"
+                             password-characters-validator
+                             match-validator="signUpData.passkey"
+                             required />
+                      <div class="error-info" ng-if="interacted(regForm.confirmPassword)" ng-messages="regForm.confirmPassword.$error">
+                        <div ng-message="match">This password does not match the password entered before</div>
+                      </div>
+                      </div>
+                      <div class="alert alert-success" ng-bind="successMsg" ng-show="sucMsg"></div>
+                        <button type="submit" class="btn btn-primary btn-lg" ng-disabled="regForm.$invalid">Sign up</button>
+                    </form>
+                  </div>
+              </div>
+              <div class="panel-left">
+                  <div class="panel-heading prime-title"><span>Register via Social Network</span></div>
+                  <div class="panel-body">
+                    <h3 class="sec-title">
+                    	Why you need to register?
+                    </h3>
+                    <ol class="ol" role="list">
+                    	<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>Nullam ut urna eu diam ullamcorper dictum viverra id leo.</li>
+                        <li>Donec varius sapien nec fermentum laoreet.</li>
+                        <li>Sed pretium odio id ipsum vehicula rhoncus.</li>
+                        <li>In semper tortor a nulla vestibulum convallis.</li>
+                    </ol>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer ng-include="template[1].url"></footer>

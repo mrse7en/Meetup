@@ -1,0 +1,45 @@
+<header class="white-header" ng-include="template[0].url"></header>
+<div class="container">
+	<ol class="breadcrumb">
+      <li><a href="#home">Home</a></li>
+      <li class="active">{{pageName}}</li>
+    </ol>
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+        	<div class="panel panel-default login-panel">
+              <div class="panel-heading prime-title"><span>Member Login</span></div>
+              <div class="panel-body">
+                <form role="form" name="loginForm" novalidate ng-submit="submit()">
+                	<div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email" ng-model="user.email" name="email" required>
+                    <div ng-messages="loginForm.email.$error" class="error-info" ng-if="interacted(loginForm.email)">
+                        <p ng-message="required">Email is required</p>
+                    </div> 
+                  </div>
+                  <div class="form-group">
+                    <label for="passkey">Password</label>
+                    <input type="password" class="form-control" id="passkey" placeholder="Password" ng-model="user.password" required name="passkey">
+                    <div ng-messages="loginForm.passkey.$error" class="error-info" ng-if="interacted(loginForm.passkey)">
+                        <p ng-message="required">Email is required</p>
+                    </div> 
+                  </div>
+                  <div class="alert alert-danger" ng-show="logFail" ng-bind="msgTxt"></div>
+                  	<button type="submit" class="btn btn-primary btn-lg">Login</button>
+                  <p>
+                  	Not a member yet? <a href="#register">Sign up here for free!</a>
+                  </p>
+                </form>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+        	<div class="panel panel-default login-panel">
+              <div class="panel-heading prime-title"><span>Social Network Login</span></div>
+              <div class="panel-body">
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer ng-include="template[1].url"></footer>
